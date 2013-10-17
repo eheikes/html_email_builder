@@ -1,4 +1,4 @@
-# TODO: go through email output with fine-tooth comb
+require 'active_support/core_ext/hash/keys' # for Hash#symbolize_keys
 
 module Haml
   # test: GiftCardMailer.recipient_notification(GiftCard.find(8)).deliver

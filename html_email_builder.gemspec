@@ -9,4 +9,6 @@ Gem::Specification.new do |s|
   s.files       = ["lib/html_email_builder.rb"]
   s.homepage    = "https://github.com/eheikes/html_email_builder"
   s.license     = "Apache-2"
+  s.add_dependency('activesupport', '>= 1.0.0')
+  s.add_dependency('haml', '>= 3.1.0')
 end
