@@ -1,0 +1,105 @@
+= container do
+  = row do
+    %h1{:style => "font-size: 18px; line-height: 18px;"}
+      = "Your Receipt"
+  = row(:spacer => 18)
+  = row do
+    = "Text String 1"
+    = "Text String 2"
+    = "Text String 3"
+  = row(:spacer => 27)
+  = row do
+    = "Text String 4"
+    = succeed "." do
+      = "Text String 5"
+
+  -# Order details
+  = row(:spacer => 27)
+  = row do
+    %h2{:style => "margin: 0;"}
+      = "Order #42"
+  = row(:spacer => 9)
+  = row do
+    = container(:style => "border: 1px solid #ebe7e2;") do
+      -# Buyer avatar+name
+      = row do
+        = col(:style => "background-color: #f9f8f6; border-bottom: 1px solid #ebe7e2; padding: 6px 9px;") do
+          = container do
+            = col(:style => "width: 24px;") do
+              = "Text String 6"
+            = col(:spacer => 9)
+            = col do
+              = "Text String 7"
+      -# Shipping address, payment methods, and line items
+      = row do
+        = col(:style => "padding: 0px 9px;") do
+          = container do
+            -# Shipping address
+            = row(:spacer => 9)
+            = row do
+              %h3{:style => "text-transform: uppercase; font-weight: normal; margin: 0;"}
+                = "Shipping Address"
+            = row do
+              = "Text String 8"
+              %br
+              = "Text String 9"
+            -# Payment methods
+            = row(:spacer => 18)
+            = row do
+              %h3{:style => "text-transform: uppercase; font-weight: normal; margin: 0;"}
+                = "Paid Via"
+            = row do
+              = "Text String 10"
+            = row do
+              = col(:vspace => 9, :style => "border-bottom: 1px solid #ebe7e2;")
+            = row(:spacer => 6)
+            -# Line items
+            = row do
+              = container do
+                = row do
+                  = col(:style => "width: 100px;") do
+                    = "Text String 11"
+                  = col(:spacer => 18)
+                  = col(:style => "vertical-align: middle;") do
+                    = "Text String 12"
+                = row(:spacer => 6, :colspan => 3)
+      -# Subtotals/fees
+      = row do
+        = col(:style => "background-color: #f9f6eb; border-top: 1px solid #ebe7e2; padding: 6px 9px;") do
+          = container do
+            = row do
+              = col do
+                = "Item Total"
+              = col(:style => "text-align: right;") do
+                = "$100.00"
+              = col
+            = row do
+              = col do
+                = "Tax, (7%)"
+              = col(:style => "text-align: right;") do
+                = "$7.00"
+              = col
+            = row do
+              = col(:style => "padding-bottom: 6px;") do
+                = "Shipping"
+              = col(:style => "padding-bottom: 6px; text-align: right;") do
+                = "$10.00"
+              = col(:style => "padding-bottom: 6px;")
+            = row do
+              = col(:style => "padding: 6px 0px; border-top: 1px solid #ebe7e2; font-weight: bold;") do
+                = "Total to Credit Card"
+              = col(:style => "padding: 6px 0px; border-top: 1px solid #ebe7e2; font-weight: bold; text-align: right;") do
+                = "$117.00"
+              = col(:style => "padding: 6px 0px; border-top: 1px solid #ebe7e2;")
+  -# Footer
+  = row(:spacer => 27)
+  = row do
+    %h2{:style => "font-size: 16px; line-height: 18px;"}
+      Test String 13
+  = row(:spacer => 18)
+  = row do
+    = "Test String 14"
+  = row(:spacer => 18)
+  = row do
+    = "Test String 15"
+  = row(:spacer => 30)
