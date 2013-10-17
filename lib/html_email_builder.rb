@@ -1,8 +1,6 @@
 require 'active_support/core_ext/hash/keys' # for Hash#symbolize_keys
 
 module Haml
-  # test: GiftCardMailer.recipient_notification(GiftCard.find(8)).deliver
-  # test: OrderMailer.notify_email(Order.find(13)).deliver
 
   module Helpers
 
