@@ -10,8 +10,6 @@ module Haml
     # Defaults to centered and 100% width.
     # Example: = table(:width => 590) do
     def container(attrs = {}, &block)
-      puts "container() #{attrs}"
-
       attrs.symbolize_keys!
       attrs[:cellpadding] ||= 0
       attrs[:cellspacing] ||= 0
@@ -23,19 +21,15 @@ module Haml
       capture_haml do
         haml_tag(:table, attrs) do
           if block
-            puts "  has block"
             block_output = capture_haml(&block)
             if has_row?(block_output)
-              puts "  has row, doing simple concat"
               haml_concat(block_output)
             else
-              puts "  missing row, adding row"
               # Use block_output rather than re-processing the block
               #   (especially because there will have been side effects).
               haml_concat row() { haml_concat(block_output) }
             end
           else
-            puts "  no block. this is highly irregular, but i'll allow it"
             haml_concat row()
           end
         end
@@ -48,7 +42,6 @@ module Haml
     # :hspace -- horizontal space
     # :colspan and :rowspan -- like for TD
     def row(attrs = {}, &block)
-      puts "row() #{attrs}"
       attrs.symbolize_keys!
 
       # Define and initialize column attributes.
@@ -75,19 +68,15 @@ module Haml
       capture_haml do
         haml_tag(:tr, attrs) do
           if block
-            puts "  has block"
             block_output = capture_haml(&block)
             if has_col?(block_output)
-              puts "  has column, doing simple concat"
               haml_concat(block_output)
             else
-              puts "  missing column, adding col"
               # Use block_output rather than re-processing the block
               #   (especially because there will have been side effects).
               haml_concat col(col_attrs) { haml_concat(block_output) }
             end
           else
-            puts "  no block, adding col"
             haml_concat col(col_attrs)
           end
         end
@@ -99,7 +88,6 @@ module Haml
     # :vspace -- vertical space
     # :spacer or :hspace -- horizontal space
     def col(attrs = {}, &block)
-      puts "col() #{attrs}"
       attrs.symbolize_keys!
 
       # Make sure the style attribute can be easily added to.
