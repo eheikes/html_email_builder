@@ -101,7 +101,7 @@ module Haml
       map_attrib!(attrs, :spacer, :width)
       map_attrib!(attrs, :hspace, :width)
       map_attrib!(attrs, :vspace, :height)
-      attrs[:style] = attrs[:style].to_s + "width:  #{attrs[:width]}px;"  unless attrs[:width].nil?
+      attrs[:style] = attrs[:style].to_s + "width: #{attrs[:width]}px;"   unless attrs[:width].nil?
       attrs[:style] = attrs[:style].to_s + "height: #{attrs[:height]}px;" unless attrs[:height].nil?
 
       capture_haml do
