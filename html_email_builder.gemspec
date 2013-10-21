@@ -7,6 +7,7 @@ Gem::Specification.new do |s|
   s.author      = "Eric Heikes"
   s.email       = "eheikes@gmail.com"
   s.files       = ["lib/html_email_builder.rb"]
+  s.files       += Dir.glob("lib/html_email_builder/*.rb")
   s.homepage    = "https://github.com/eheikes/html_email_builder"
   s.license     = "Apache-2.0"
   s.test_files  = Dir.glob('test/*_test.rb')
