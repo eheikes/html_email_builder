@@ -161,6 +161,26 @@ HTML
 HAML
   end
 
+  def test_2_empty_containers
+    assert_equal(<<HTML, render(<<HAML))
+<table align='center' border='0' cellpadding='0' cellspacing='0' style='margin-left: auto; margin-right: auto;' width='100%'>
+  <tr>
+    <td>
+      <table align='center' border='0' cellpadding='0' cellspacing='0' style='margin-left: auto; margin-right: auto;' width='100%'>
+        <tr>
+          <td>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+HTML
+= container do
+  = container
+HAML
+  end
+
   def test_container_with_row
     assert_equal(<<HTML, render(<<HAML))
 <table align='center' border='0' cellpadding='0' cellspacing='0' style='margin-left: auto; margin-right: auto;' width='100%'>
