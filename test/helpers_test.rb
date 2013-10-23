@@ -151,11 +151,13 @@ HAML
 <table align='center' border='0' cellpadding='0' cellspacing='0' style='margin-left: auto; margin-right: auto;' width='100%'>
   <tr>
     <td>
+      Foobar
     </td>
   </tr>
 </table>
 HTML
-= container
+= container do
+  Foobar
 HAML
   end
 
